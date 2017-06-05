@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             getPhoneInfo();
         }
+
     }
 
     @Override
@@ -55,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
         str_info += "Build serial: " + Build.SERIAL + "\n";
         str_info += "Android ID: " + Settings.Secure.ANDROID_ID + "\n";
         str_info += "Mac address: " + getMac() + "\n";
+
+        //test native hook
+        NativeMethod nm = new NativeMethod();
+        String temp = nm.readFile();
+        str_info += temp;
 
         phoneinfo.setText(str_info);
     }
